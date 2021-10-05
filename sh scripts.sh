@@ -1,9 +1,13 @@
 
-My auto-installs scripts for  osint,bugbounty,pentesting
+# My auto-install scripts for Osint, Bugbounty, Pentesting
+
+
+**To gain some time and avoid boring installations, I use these shell scripts for quick installations for VM's for my CyberLabs.**
+
+Default path is : home='cd /opt' 
+*Or anywhere as you wish. To keep tidy, /opt is better, in my opinion. You can choose /Downloads and mkdir Tools, etc :)*
 
 #!/bin/bash
-
-home='cd /opt'  # Or anywhere as you wish. To keep tidy, /opt is better, in my opinion. You can choose /Downloads and mkdir Tools, etc :)
 
 `echo $home`
 # dirsearch
@@ -64,4 +68,17 @@ sudo python3 -m pip install holehe
 # Sublist3r
 git clone https://github.com/aboul3la/Sublist3r.git
 sudo python3 -m pip install -r requirements.txt
+#theHarvester
+git clone https://github.com/laramies/theHarvester.git
+# Photon
+git clone https://github.com/s0md3v/Photon.git
+cd Photon && python3 -m pip install -r requirements.txt
+# theHarvester
+cd theHarvester
+sudo python3 -m pip install -r requirements.txt --ignore-installed
+sudo python3 -m pip install pipenv
+sudo python3 -m pip install webscreenshot
+sudo add-apt-repository -y ppa:micahflee/ppa
+sudo apt -y update
+
 
