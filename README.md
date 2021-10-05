@@ -3,7 +3,7 @@
 
 # Example:
 
-*Photon*
+*Photon*<br /> 
 git clone https://github.com/s0md3v/Photon.git
 cd Photon && python3 -m pip install -r requirements.txt
 
