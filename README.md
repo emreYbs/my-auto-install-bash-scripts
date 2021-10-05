@@ -6,7 +6,7 @@
 **To gain some time and avoid boring installations**, I use these shell scripts for quick installations for VM's for my CyberLabs. Having and maintaining cyberLabs are required to learn better for an infoSec student, hobbyist, or an professional and setting new VM's from scratch becomes boring and I generally use different sets of auto shells for different tasks. So I can gain some time and get rid of the burden. As they say, automation is the future:)
 
 Default path is : home='cd /opt' 
-*Or anywhere as you wish. To keep tidy, /opt is better, in my opinion. You can choose /Downloads and mkdir Tools, etc :)*
+*Or anywhere as you wish. To keep it tidy, /opt is better, in my opinion. You can choose /Downloads and mkdir Tools, etc, if you prefer. That is why, I tried to only add auto git clone and install requirements and avoid setting paths, you can arrange as you are used to.*
 
 # Example:
 
