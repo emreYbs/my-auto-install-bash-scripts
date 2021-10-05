@@ -2,14 +2,15 @@
 # My auto-install scripts for Osint, Bugbounty, Pentesting
 
 
-**To gain some time and avoid boring installations, I use these shell scripts for quick installations for VM's for my CyberLabs.**
+# **To gain some time and avoid boring installations, I use these shell scripts for quick installations for VM's for my CyberLabs.**
 
-Default path is : home='cd /opt' 
-*Or anywhere as you wish. To keep tidy, /opt is better, in my opinion. You can choose /Downloads and mkdir Tools, etc :)*
+# Default path is : home='cd /opt' 
+# *Or anywhere as you wish. To keep tidy, /opt is better, in my opinion. You can choose /Downloads and mkdir Tools, etc :)*
 
 #!/bin/bash
 
-`echo $home`
+cd /opt
+
 # dirsearch
 git clone https://github.com/maurosoria/dirsearch
 # WPScan
@@ -23,7 +24,7 @@ apt install golang
 make
 export PATH=$PATH:/opt/gobuster
 `echo $home`
-
+cd /opt
 # Powersploit
 https://github.com/PowerShellMafia/PowerSploit/tree/master/Recon
 # LinEnum
@@ -33,10 +34,7 @@ git clone https://github.com/rebootuser/LinEnum
 git clone https://github.com/mzet-/linux-exploit-suggester
 # Windows Exploit Suggester
 git clone https://github.com/AonCyberLabs/Windows-Exploit-Suggester
-# Empire
-mkdir priv_esc/windows; cd priv_esc/windows
-git clone https://github.com/EmpireProject/Empire
-`echo $home`
+
 # Autorecon
 git clone https://github.com/Tib3rius/AutoRecon
 # Evil-winrm
@@ -73,7 +71,14 @@ git clone https://github.com/laramies/theHarvester.git
 # Photon
 git clone https://github.com/s0md3v/Photon.git
 cd Photon && python3 -m pip install -r requirements.txt
+
+# privilege escalation  Empire
+mkdir priv_esc/windows; cd priv_esc/windows
+git clone https://github.com/EmpireProject/Empire
+`echo $home`
+
 # theHarvester
+git clone https://github.com/laramies/theHarvester.git
 cd theHarvester
 sudo python3 -m pip install -r requirements.txt --ignore-installed
 sudo python3 -m pip install pipenv
