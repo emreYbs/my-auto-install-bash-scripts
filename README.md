@@ -2,6 +2,9 @@
 
 *My **auto-installation scripts** for osint, bugbounty, pentesting*
 
+[![Bash Shell](https://badges.frapsoft.com/bash/v1/bash-200x34.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
+
+
 
 **To gain some time and avoid boring installations**, I use these shell scripts for quick installations for VM's for my CyberLabs. Having and maintaining cyberLabs are required to learn better for an infoSec student, hobbyist, or an professional and setting new VM's from scratch becomes boring and I generally use different sets of auto shells for different tasks. So I can gain some time and get rid of the burden. As they say, automation is the future:)
 
