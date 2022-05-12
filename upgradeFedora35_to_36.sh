@@ -6,7 +6,7 @@
 
 echo "This simple script will upgrade Fedora 35 to Fedora 36 Workstation"
 sleep 2
-echo "However, I recommend a fresh install,it tends to be more stable that way.."
+echo "However, I recommend a fresh install, it tends to be more stable that way.."
 sleep 3
 echo "Anyway, I will install:)"
 
