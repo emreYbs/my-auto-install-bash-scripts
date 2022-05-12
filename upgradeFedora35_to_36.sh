@@ -18,7 +18,13 @@ sudo dnf system-upgrade reboot
 
 echo "Done"
 
-# After Reboot, do these below (to remove cached metadata and transaction)
+##### After Reboot, do these below (to remove cached metadata and transaction)
 
 # dnf system-upgrade clean
 # dnf clean packages
+
+##### Firmware Updates
+
+# sudo fwupdmgr refresh --force
+# sudo fwupdmgr get-updates
+# sudo fwupdmgr update
