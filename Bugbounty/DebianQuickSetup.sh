@@ -1,6 +1,4 @@
-
-# My auto-install scripts for Osint, Bugbounty, Pentesting
-
+#emreybs My auto-install scripts for Osint, Bugbounty, Pentesting on a Debian Distro  
 
 # **To gain some time and avoid boring installations, I use these shell scripts for quick installations for VM's for my CyberLabs.**
 
