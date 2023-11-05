@@ -1,7 +1,7 @@
 #!/bin/bash
 #emreYbs
 
-# WORK in Progress. There are some minor issues with the latest UBUNTU 23.10 in Budgie desktop. So I test regulary and will optimize it very soon.
+# WORK in Progress. There are some minor issues with the latest UBUNTU 23.10 in Budgie desktop. So I test regularly and will optimize it very soon.
 # Here is the script in progress. NOT COMPLETED, not Refactored yet.
 # Beware again, you can encounter some errors and also it's kind of spagetti code which I need to refactor. Some dublicates in the script.
 # For now, I love to test new Linux distros with my custom auto scripts.
