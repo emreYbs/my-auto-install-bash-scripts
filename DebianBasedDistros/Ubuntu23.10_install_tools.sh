@@ -364,10 +364,6 @@ if [ "$security" == "yes" ]; then
         esac
     done
 
-
-
-#!/bin/bash
-
 # Function to handle errors
 function handle_error() {
     echo "Error on line $1"
