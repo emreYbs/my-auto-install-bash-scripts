@@ -88,9 +88,9 @@ fi
 
     # Install Firejail and firejail tools
     sudo apt-get install firejail firetools -y
-else
+
     echo "Skipping security settings..."
-fi
+
 
 # Encrypt the hard drive if user inputs "yes"
 if [ "$security" == "yes" ]; then
@@ -588,6 +588,9 @@ for browser in "${browser_array[@]}"; do
             ;;
     esac
 done
+
+echo "Unnecessary or no longer needed packages will be autoremoved now..."
+sudo apt autoremove
 
 echo "Installation has finally completed."
 echo "Please reboot your system to apply changes."
