@@ -89,30 +89,6 @@ fi
     # Install Firejail and firejail tools
     sudo apt-get install firejail firetools -y
 
-    echo "Skipping security settings..."
-
-
-# Encrypt the hard drive if user inputs "yes"
-if [ "$security" == "yes" ]; then
-    sudo apt-get install cryptsetup -y
-    sudo cryptsetup luksFormat /dev/sda1
-    sudo cryptsetup luksOpen /dev/sda1 cryptroot
-    sudo mkfs.ext4 /dev/mapper/cryptroot
-    #!/bin/bash
-
-    # Mount encrypted root partition
-    sudo mount /dev/mapper/cryptroot /mnt
-
-    # Copy root partition to mounted partition
-    sudo rsync -ax / /mnt
-
-    # Mount boot partition
-    sudo mount /dev/sda2 /mnt/boot
-fi
-    
-    else
-        echo "Skipping removal of preinstalled software..."
-    fi
     
 read -p "Do you want to update the system? (yes/no): " update
 
@@ -124,7 +100,6 @@ if [ "$update" == "yes" ]; then
 else
     echo "Skipping system update."
 fi
-
 
 # Prompt user to enable security settings
 read -p "Do you want to enable security settings? (yes/no): " security
@@ -143,74 +118,6 @@ else
     sudo apt update && sudo apt upgrade -y
     echo "System has been updated successfully."
 fi
-
-    echo  "Installing and configuring the firewall"
-    echo "Deny incoming SSH, FTP, and other connections"
-    sudo apt-get install ufw -y
-    sudo ufw default deny incoming
-    sudo ufw allow out 22/tcp #if SSH not needed, then remove this line or 'comment' this line
-    sudo ufw allow out 80/tcp
-    sudo ufw allow out 443/tcp
-    echo "Enabling the firewall"
-    sudo ufw enable
-    sudo ufw status
-
-    echo "Disabling unnecessary services and removing unnecessary packages."
-    sudo systemctl disable bluetooth.service
-    sudo systemctl disable cups.service
-    sudo apt-get remove gnome-sudoku gnome-mines gnome-mahjongg -y
-
-    # Install and configure fail2ban
-    sudo apt-get install fail2ban -y
-    sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
-    sudo systemctl enable fail2ban
-    sudo systemctl start fail2ban
-    
-    # Install and configure AppArmor
-    sudo apt-get install apparmor apparmor-utils -y
-    sudo aa-enforce /etc/apparmor.d/*
-    sudo systemctl enable apparmor
-    sudo systemctl start apparmor
-
-    # Install and configure auditd
-    sudo apt-get install auditd -y
-    sudo systemctl enable auditd
-    sudo systemctl start auditd
-
-    # Install Firejail and firejail tools
-    sudo apt-get install firejail firetools -y
-else
-    echo "Skipping security settings..."
-fi
-
-# Encrypt the hard drive if user inputs "yes"
-if [ "$security" == "yes" ]; then
-    sudo apt-get install cryptsetup -y
-    sudo cryptsetup luksFormat /dev/sda1
-    sudo cryptsetup luksOpen /dev/sda1 cryptroot
-    sudo mkfs.ext4 /dev/mapper/cryptroot
-    #!/bin/bash
-
-    # Mount encrypted root partition
-    sudo mount /dev/mapper/cryptroot /mnt
-
-    # Copy root partition to mounted partition
-    sudo rsync -ax / /mnt
-
-    # Mount boot partition
-    sudo mount /dev/sda2 /mnt/boot
-
-    # Bind mount system directories
-    sudo mount --bind /dev /mnt/dev
-    sudo mount --bind /proc /mnt/proc
-    sudo mount --bind /sys /mnt/sys
-
-    # Chroot into mounted partition
-    sudo chroot /mnt <<EOF
-
-    # Update initramfs and grub
-    update-initramfs -u -k all
-    update-grub
 
     # Install and configure VPN if user inputs "yes"
     if [ "$security" == "yes" ]; then
