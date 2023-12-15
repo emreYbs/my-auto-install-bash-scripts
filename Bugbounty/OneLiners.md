@@ -5,3 +5,5 @@
 
 If you do not have it, you can install _**ffuf**_ ````sudo apt-get install ffuf```` </br>
 For the content discovery wordlist, you also need to have: _**SecLists**_  ````git clone https://github.com/danielmiessler/SecLists.git````
+
+The normal usage of this tool is : ````ffuf -w /path/to/wordlist -u http://targetwebsite.com/FUZZ````, but with this oneliner you can be a little faster and it's a little easier to use in terms of syntax.
