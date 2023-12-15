@@ -17,5 +17,6 @@ The normal usage of this tool is : ````ffuf -w /path/to/wordlist -u http://targe
 - -t: Specifies the number of concurrent threads that `ffuf` will use. Increase the number for faster discovery BUT be careful, for the server, you also increase the load.
 - -recursion: As the name indicates, -recursion`: Enables recursive fuzzing. `ffuf` will fuzz both the directory and each subdirectory that it discovers.
 - -v: verbose mode
-
+- -H: specify custom headers ````ffuf -w /path/to/wordlist -u http://targetwebsite.com/FUZZ -H "User-Agent: MyCustomUserAgent" -H "Cookie: sessionid=123456"````
+  
 ````ffuf -w /path/to/wordlist -u http://targetwebsite.com/FUZZ -mc 200,204,301,302,307,401,403 -fc 404 -e .php,.html,.js -t 50 -recursion -v````
