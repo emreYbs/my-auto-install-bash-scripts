@@ -1,9 +1,9 @@
 # |I{•------» my-auto-install-bash-scripts »------•{I|
 
-*My **auto-installation scripts** for osint 🧐, bugbounty 🐛, pentesting 🔨*
+# *My **auto-installation scripts** for osint 🧐, bugbounty 🐛, pentesting 🔨* #
 
 [![Bash Shell](https://badges.frapsoft.com/bash/v1/bash-200x34.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
-
+````emreYbs:~$ *•.¸♡ BASH ♡¸.•* ````
 
 
 **To gain some time 🚘 and avoid boring 🥱 installations**, I use these shell scripts for quick ⏩ installations for VM's for my CyberLabs.
