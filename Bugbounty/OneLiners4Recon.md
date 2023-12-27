@@ -72,3 +72,6 @@ whatweb -v targetdomain.com
 #Have jq installed on your system to use this command:sudo apt install jq
 #use the -of flag to specify the output format. You can use csv, ejson, json, html, md, or yaml.
 ffuf -u https://targetdomain.com/FUZZ -w /path/to/wordlist.txt -mc all -fc 404 -of csv -o output.csv && ffuf -u https://targetdomain.com/FUZZ -w /path/to/wordlist.txt -mc all -fc 404 -of ejson -o output.json && jq -r '.results[] | [.url, .status, .length, .words, .lines] | @csv' output.json > output.txt
+
+#As Oneliner
+echo "https://targetdomain.com/FUZZ" | xargs -I % ffuf -u % -w /path/to/wordlist.txt -mc all -fc 404 -of ejson -o output.json && jq -r '.results[] | [.url, .status, .length, .words, .lines] | @csv' output.json > output.txt
