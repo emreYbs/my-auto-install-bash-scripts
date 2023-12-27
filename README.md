@@ -1,4 +1,4 @@
-# my-auto-install-bash-scripts
+# |I{•------» my-auto-install-bash-scripts »------•{I|
 
 *My **auto-installation scripts** for osint 🧐, bugbounty 🐛, pentesting 🔨*
 
