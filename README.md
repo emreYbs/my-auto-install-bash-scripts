@@ -42,7 +42,9 @@ sudo add-apt-repository -y ppa:micahflee/ppa<br />
 sudo apt -y update
 
 
-### Tip for Windows Users:
+### Extra Information:
+- _Although this repo is intended for Linux users, for the Windows users, "winget" tool can update the apps easily._ 
+- **Tip for Windows Users:**
  ````winget upgrade --all --accept-package-agreements```` this command will update all the installed packages in a Windows PC. Since I generally use MacOs and Linux, I don't need to use this command much, but it is very handy. If you need, start a Powershell terminal and run this command. OR google it for extra uses. Some good info can be found here:
 - https://learn.microsoft.com/en-us/windows/package-manager/winget/
 - https://www.howtogeek.com/674470/how-to-use-windows-10s-package-manager-winget/
