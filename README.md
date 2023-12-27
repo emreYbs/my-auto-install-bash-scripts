@@ -11,7 +11,7 @@
 
 So I can gain some time and get rid of the burden. As they say, **automation is the future:)**
 
-Default path is : home='cd /opt' 
+**Default path** is : ````home='cd /opt' ````
 *Or anywhere as you wish. To keep it tidy, **/opt** is better, in my opinion. You can choose /Downloads and mkdir Tools, etc, if you prefer. That is why, I tried to only add auto git clone and install requirements and avoid setting paths, you can arrange as you are used to.*
 
 # Example:
@@ -31,5 +31,11 @@ sudo python3 -m pip install webscreenshot<br />
 sudo add-apt-repository -y ppa:micahflee/ppa<br />
 sudo apt -y update
 
+
+### Tip for Windows Users:
+ ````winget upgrade --all --accept-package-agreements```` this command will update all the installed packages in a Windows PC. Since I generally use MacOs and Linux, I don't need to use this command much, but it is very handy. If you need, start a Powershell terminal and run this command. OR google it for extra uses. Some good info can be found here:
+- https://learn.microsoft.com/en-us/windows/package-manager/winget/
+- https://www.howtogeek.com/674470/how-to-use-windows-10s-package-manager-winget/
+- https://github.com/microsoft/winget-cli
 
 
