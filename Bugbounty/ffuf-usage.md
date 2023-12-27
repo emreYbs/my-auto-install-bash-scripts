@@ -20,3 +20,17 @@ The normal usage of this tool is : ````ffuf -w /path/to/wordlist -u http://targe
 - -H: specify custom headers ````ffuf -w /path/to/wordlist -u http://targetwebsite.com/FUZZ -H "User-Agent: MyCustomUserAgent" -H "Cookie: sessionid=123456"````
   
 ````ffuf -w /path/to/wordlist -u http://targetwebsite.com/FUZZ -mc 200,204,301,302,307,401,403 -fc 404 -e .php,.html,.js -t 50 -recursion -v````
+
+- -fc: ignore/filter out 404s and match all HTTP response/status codes
+````ffuf -u https://targetdomain.com/FUZZ -w **/path/to/wordlist.txt** -mc all **-fc** 404```` 
+- _Arrange the **PATH** to your wordlist PATH and the target URL._
+
+### Use ffuf to find subdomains
+````ffuf -w /path/to/wordlist.txt -u https://targetdomain.com -H "Host: FUZZ.targetdomain.com" -fs 4242````
+
+### A more advanced use of ffuf command in oneliner form that I use for bug bounty hunting
+- Have jq installed on your system to use this command:````sudo apt install jq```` for Debian, Ubuntu based distros. You can also use````brew````for MacOs
+
+- use the **-o** or **-of** _flag_ to specify the output format. You can use **csv, ejson, json, html, md, or yaml**.
+````ffuf -u https://targetdomain.com/FUZZ -w /path/to/wordlist.txt -mc all -fc 404 -of csv -o output.csv && ffuf -u https://targetdomain.com/FUZZ -w /path/to/wordlist.txt -mc all -fc 404 -of ejson -o output.json && jq -r '.results[] | [.url, .status, .length, .words, .lines] | @csv' output.json > output.txt````
+- And let me remind again: _Arrange the **PATH** to your wordlist PATH and the target URL._
