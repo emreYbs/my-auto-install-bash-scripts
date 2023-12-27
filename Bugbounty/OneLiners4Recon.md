@@ -1,5 +1,6 @@
 #!/bin/bash
 #github.com/emreYbs/my-auto-install-bash-scripts
+#Be sure to have the tools and install if that tool is missing. I tested on an Ubuntu and Debian based distro. "jq" tool can be missing in some distro repos.
 
 
 
@@ -66,3 +67,8 @@ exiftool targetzip.zip
 # Use WhatWeb with verbose output to gather detailed information about the target website
 whatweb -v targetdomain.com
 
+# fuff tool is great for pentesters or bug bounty hunters. Check its Github Repo for more detailed uses: https://github.com/ffuf/ffuf
+# A more advanced use of ffuf command in oneliner form that I use for bug bounty hunting
+#Have jq installed on your system to use this command:sudo apt install jq
+#use the -of flag to specify the output format. You can use csv, ejson, json, html, md, or yaml.
+ffuf -u https://targetdomain.com/FUZZ -w /path/to/wordlist.txt -mc all -fc 404 -of csv -o output.csv && ffuf -u https://targetdomain.com/FUZZ -w /path/to/wordlist.txt -mc all -fc 404 -of ejson -o output.json && jq -r '.results[] | [.url, .status, .length, .words, .lines] | @csv' output.json > output.txt
