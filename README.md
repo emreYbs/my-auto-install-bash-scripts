@@ -18,11 +18,21 @@ So I can gain some time and get rid of the burden. As they say, **automation is 
 
 - For example, this shell script will install a couple of tools that I use for some tasks. Take "Photon" and TheHarvester as an example below out of the whole list:
 
-*Photon*<br /> 
+*Photon* <br /> 
+- Although **Photon** is not regulary updated, it is still very handy and for Recon/Osint, a great and fast crawler for an OSINTer, pentester, bugbounty hunter, etc.
 git clone https://github.com/s0md3v/Photon.git<br />
 cd Photon && python3 -m pip install -r requirements.txt
 
-*TheHarvester<br /> 
+- If you want, you can also use **Photon** in a Docker:
+
+````
+$ git clone https://github.com/s0md3v/Photon.git
+$ cd Photon
+$ docker build -t photon .
+$ docker run -it --name photon photon:latest -u google.com
+````
+- Tip: Add ````--wayback```` to your Photon command, so it can fetch URL's from archived by archive.org. Handy for some Recon process. 
+*TheHarvester*<br /> 
 git clone https://github.com/laramies/theHarvester.git<br />
 cd theHarvester<br />
 sudo python3 -m pip install -r requirements.txt --ignore-installed<br />
@@ -37,5 +47,6 @@ sudo apt -y update
 - https://learn.microsoft.com/en-us/windows/package-manager/winget/
 - https://www.howtogeek.com/674470/how-to-use-windows-10s-package-manager-winget/
 - https://github.com/microsoft/winget-cli
+  
 
 
