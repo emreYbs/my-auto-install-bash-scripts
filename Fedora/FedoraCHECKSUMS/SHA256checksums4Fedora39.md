@@ -1,12 +1,28 @@
 
+**NOTE:** In this repo, you can find a simple Python script I had to write. Sayin "had to" because I was tired of searching for the Fedora 39 Python Classroom's SHA256 sum to verify the downloaded the iso from the official site. Fedora Official website, weirdly, doesn't provide the all CHECKSUMS for LABS editions. You need to brute force the subdomains, which I didn't want to do. So this simple Python script can help you find the CHECKSUMS links. However, I also provided the offical 256Sum for a quick check.
+
 # Fedora 39 Checksums
+### TL;DR : 
+- You can easily find the Python Classroom or other LABS version of Fedora 39 here.
+https://dl.fedoraproject.org/pub/alt/releases/39/Labs/x86_64/iso/
+https://dl.fedoraproject.org/pub/alt/releases/39/Labs/x86_64/iso/Fedora-Labs-39-1.5-x86_64-CHECKSUM
+ 
+
+You can find all official mirror sites for Fedora here: https://admin.fedoraproject.org/mirrormanager/mirrors/Fedora/39/aarch64
  </br>
  
-- Fedora-Labs-39-1.5-aarch64-CHECKSUM  </br>
+- Say you need Fedora-Labs-39-1.5-aarch64-CHECKSUM but you cannot find it in the official Fedora Website. Weirdly, the CHECKSUMS for LABS and alternative downloads may be hidden in the Fedora Website.
+- So you can use the Mirror sites to get the CHECKSUMS for Fedora39 and try the closest country mirror. </br>
+- You can also use this simple Python script that I wrote, I chose the official mirror site in Russia since it has the Checksum for Python Classsroom iso
+- Turkish mirror has different spins but not the Python Classroom: https://ftp.linux.org.tr/fedora/releases/39/Spins/x86_64/iso/
 
 ### Fedora-Python-Classroom-39-1.5.aarch64.raw.xz
 **SHA256**:
   - ee5db44bfe1db22f95ab9205fe7bd688378e5a1f94ce944153507ab737ea4674
+
+### Fedora-Python-Classroom-Live-x86_64-39-1.5.iso
+**SHA256**:
+- 20b660ac93516c2b82a8f7105151df12c363fd18b358a7cd6a5baaa8d05b8796
   
  Since Fedora Official website gives the Fedora Workstation 39 CHECKSUMs but ignores some other LABS distros. I found some other valid mirror websites to check/verify the downloaded the iso files:
 https://mirror.yandex.ru/fedora-secondary/releases/39/Labs/aarch64/images/ </br>
