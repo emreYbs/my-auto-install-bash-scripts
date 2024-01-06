@@ -1,0 +1,6 @@
+
+Fedora-Python-Classroom-Live-x86_64-39-1.5.iso
+SHA256: 20b660ac93516c2b82a8f7105151df12c363fd18b358a7cd6a5baaa8d05b8796
+
+Kontrol ettim. OK
+Info: For my instance, the integrity is OK. 
