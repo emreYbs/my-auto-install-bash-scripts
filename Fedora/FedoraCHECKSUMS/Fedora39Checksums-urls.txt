@@ -15,3 +15,5 @@ URL: https://dl.fedoraproject.org/pub/alt/releases/39/Silverblue/
 URL: https://dl.fedoraproject.org/pub/alt/releases/39/Spins/
 URL: https://dl.fedoraproject.org/pub/alt/releases/39/Workstation/
 
+https://mirror.fcix.net/fedora-alt/releases/39/Labs/x86_64/iso/Fedora-Labs-39-1.5-x86_64-CHECKSUM  (All Fedora Labs-39 Checksums)
+
