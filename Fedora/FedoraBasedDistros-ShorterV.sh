@@ -88,4 +88,6 @@ echo "Everything is done! Enjoy your new Fedora Based Distro!"
 echo "Exiting...and the system will reboot in 3 seconds..."
 sleep 3
 log "Installation process completed."
-sudo reboot now
+
+#If you want to reboot, uncomment. But for my Live CD VM, it is better not to reboot.
+#sudo reboot now  
