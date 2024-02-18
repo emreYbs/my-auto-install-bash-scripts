@@ -1,6 +1,7 @@
 #!/bin/bash
 #emreYbs
 #Work in Progress with little issues, not fully ready, still testing and adding more features.So be warned, use at your own risk or wait for the final version.
+# https://www.kali.org/docs/general-use/xfce-faq/ If you have issues with XFCE Desktop, you can switch to GNOME.
 
 echo "This script will install and configure Kali Linux for you."
 echo "Please run this script as root."
@@ -160,10 +161,12 @@ cd ..
 sudo apt install -y libpcap-dev --fix-missing
 sudo apt install naabu
 
-#Install Subfinder, theHarvester
+#Install Subfinder, theHarvester, Bleachbit, OWASP Zaproxy, Owasp-mantra
 sudo apt install subfinder
 sudo subfinder --update 
 sudo apt install theharvester
+sudo apt install bleachbit
+sudo apt install zaproxy owasp-mantra-ff
 
 #Python Virtual Environment
 python3 -m pip install pipenv
@@ -175,4 +178,5 @@ echo "Done!"
 echo "Please reboot the system to apply changes."
 echo "Exiting..."
 exit
+
 
