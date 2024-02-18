@@ -22,6 +22,7 @@ if ! command -v ufw &> /dev/null
 then
     # Install ufw
     sudo apt install ufw -y
+    sudo apt install rsyslog  # Suggested packages for ufw Firewall
 fi
 
 # Enable the firewall
@@ -42,13 +43,13 @@ sudo ufw allow https
 sudo systemctl disable apache2
 sudo systemctl disable mysql
 sudo systemctl disable postgresql
-sudo systemctl disable vsftpd
+# sudo systemctl disable vsftpd #Disable if already installed. Otherwise, you'll get an error:"Unit file vsftpd.service does not exist."
 
 # Stop unnecessary services
 sudo systemctl stop apache2
 sudo systemctl stop mysql
 sudo systemctl stop postgresql
-sudo systemctl stop vsftpd
+sudo systemctl stop vsftpd #If not already installed, you'll get an error.
 
 # Remove unnecessary packages if you don't need them
 # sudo apt-get purge -y apache2 mysql-server postgresql vsftpd
@@ -110,6 +111,65 @@ sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get dist-upgrade -y
 sudo apt autoremove -y
+
+#Some useful OSINT tools. Uncomment if you don't need them.
+sudo apt install pipx
+pipx ensurepath
+pipx install search-that-hash
+pipx install name-that-hash
+pipx install h8mail
+pipx install toutatis
+pipx install holehe
+pipx install shodan
+pipx ınstall ghunt
+pipx install socialscan
+pipx install waybackpy
+pipx install instalooter
+pipx install instaloader
+pipx ensurepath
+
+#Install Docker and so Go-lang based tools
+#Installing Golang can cause some issues depending on the version. So I prefered to use Docker here. If you want, you can use this instead: https://go.dev/doc/install
+sudo apt install docker.io
+#Fast golang web crawler for gathering URLs and JavaScript file locations
+echo https://www.google.com | sudo docker run --rm -i hakluke/hakrawler:v2 -subs
+sudo docker pull projectdiscovery/nuclei:latest #To test, run:  docker run --rm projectdiscovery/nuclei
+#To Update Nuclei on Docker version: sudo docker run --rm projectdiscovery/nuclei --update
+#For Further info about Nuclei, check here: https://docs.projectdiscovery.io/tools/nuclei/running#running-with-docker
+
+sudo docker pull ghcr.io/oj/gobuster:latest #Directory/File, DNS and VHost busting tool written in Go
+
+#Install AutoRecon and ensure you have some useful related tools that AutoRecon will need.
+sudo apt install seclists curl dnsrecon enum4linux feroxbuster gobuster impacket-scripts nbtscan nikto nmap onesixtyone oscanner redis-tools smbclient smbmap snmp sslscan sipvicious tnscmd10g whatweb wkhtmltopdf
+sudo apt install python3-venv
+python3 -m pip install --user pipx
+python3 -m pipx ensurepath
+pipx install git+https://github.com/Tib3rius/AutoRecon.git  #Check here for further info:https://github.com/Tib3rius/AutoRecon
+
+#Wordlists
+sudo apt -y install seclists #Already installed above but in case you may need.
+# install some penetration testing tools
+sudo apt install arjun burpsuite gospider
+
+sudo mkdir myAddedTools
+cd MyAddedTools
+git clone https://github.com/maurosoria/dirsearch.git --depth 1 #Use the dirsearch.py to use the tool
+cd ..
+                                                                                                                                                               
+#Install naabu Tool: https://github.com/projectdiscovery/naabu
+sudo apt install -y libpcap-dev --fix-missing
+sudo apt install naabu
+
+#Install Subfinder, theHarvester
+sudo apt install subfinder
+sudo subfinder --update 
+sudo apt install theharvester
+
+#Python Virtual Environment
+python3 -m pip install pipenv
+
+#Update the VM, but better to shut down your Antivirus Software on Host to be able to update properly
+sudo apt -y update
 
 echo "Done!"
 echo "Please reboot the system to apply changes."
