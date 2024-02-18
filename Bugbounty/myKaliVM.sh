@@ -14,8 +14,8 @@ echo "Starting..."
 # Change the password
 sudo passwd
 
-sudo apt install unattended-upgrades -y
-sudo dpkg-reconfigure -plow unattended-upgrades
+sudo apt update
+sudo apt upgrade
 
 # Check if ufw is installed
 if ! command -v ufw &> /dev/null
