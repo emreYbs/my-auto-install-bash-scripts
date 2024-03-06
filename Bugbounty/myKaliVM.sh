@@ -161,12 +161,14 @@ cd ..
 sudo apt install -y libpcap-dev --fix-missing
 sudo apt install naabu
 
-#Install Subfinder, theHarvester, Bleachbit, OWASP Zaproxy, Owasp-mantra
+#Install Subfinder, theHarvester, Bleachbit, OWASP Zaproxy, Owasp-mantra, Feroxbuster(faster than others, written in Rust)
 sudo apt install subfinder
 sudo subfinder --update 
 sudo apt install theharvester
 sudo apt install bleachbit
 sudo apt install zaproxy owasp-mantra-ff
+sudo apt install -y feroxbuster 
+#If not you use a Kali, then check its Github repo to see other options to install
 
 #Python Virtual Environment
 python3 -m pip install pipenv
