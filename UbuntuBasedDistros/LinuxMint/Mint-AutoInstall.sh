@@ -12,11 +12,11 @@ sudo ufw default deny incoming
 sudo ufw default allow outgoing
 sudo ufw enable
 
-# Add extra MEdia Codecs
+# Add extra Media Codecs
 sudo apt-get install mint-meta-codecs
 
 
-#Optimize Laptop Battery
+#Optimize Laptop Battery if you'll use on a laptop, comment out otherwise.
 sudo add-apt-repository ppa:linrunner/tlp
 sudo apt-get update
 sudo apt-get install tlp tlp-rdw
