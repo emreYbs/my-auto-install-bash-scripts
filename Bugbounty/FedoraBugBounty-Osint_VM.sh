@@ -214,6 +214,11 @@ export PATH=$PATH:/usr/local/go/bin
 #https://github.com/projectdiscovery/nuclei/releases  You can also download the latest version for different OS from here.
 go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
 
+# Install Katana, can be useful for OSINT or various reasons since you may need to crawl a website. #Check here for details: https://github.com/projectdiscovery/katana
+go install github.com/projectdiscovery/katana/cmd/katana@latest # To run, Example: katana -u https://tesla.com,https://google.com
+#To install Docker version if Golang version is not compatible or you encounter an issue, try Docker: docker pull projectdiscovery/katana:latest
+#To run Docker version, Example: docker run projectdiscovery/katana:latest -u https://example.com
+
 sudo dnf install proxychains-ng.x86_64 -y # Install Proxychains for security and privacy reasons.
 
 # Install OWASP ZAP if you need, uncomment some lines below:
